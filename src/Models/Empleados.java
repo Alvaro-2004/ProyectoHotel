@@ -1,12 +1,14 @@
 package Models;
 
+import Controller.EnumPuesto;
+import Controller.Administración;
 import java.util.ArrayList;
 
 /**
  *
  * @author Álvaro Álvarez R
  */
-public class Empleados implements Administración {
+public class Empleados implements Administración<Empleados> {
 
     private String cedula;
     private String nombre;
@@ -56,24 +58,26 @@ public class Empleados implements Administración {
     }
 
     @Override
-    public Object Buscar() {
+    public boolean isComplete() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public boolean Actualiazr(Object obj) {
+    public Empleados Buscar(String texto) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public boolean Eliminar(Object obj) {
+    public boolean Eliminar(Empleados obj) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public boolean Agregar(Object obj) {
+    public boolean Agregar(Empleados obj) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+
 
     
 

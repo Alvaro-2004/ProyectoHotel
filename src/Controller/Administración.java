@@ -1,16 +1,13 @@
-package Models;
+package Controller;
 
 /**
  *
  * @author Álvaro Álvarez R
  */
 public interface Administración<Type> {
-
-    public Type Buscar();
-
-    public boolean Actualiazr(Type obj);
-
+    
+    public boolean isComplete();
+    public Type Buscar(String texto);
     public boolean Eliminar(Type obj);
-
     public boolean Agregar(Type obj);
 }

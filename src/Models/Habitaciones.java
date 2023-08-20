@@ -1,6 +1,9 @@
 
 package Models;
 
+import Controller.EnumTipo;
+import Controller.EnumEstado;
+
 /**
  *
  * @author Álvaro Álvarez R

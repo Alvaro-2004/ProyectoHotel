@@ -1,5 +1,6 @@
 package Models;
 
+import Controller.EnumEstado;
 import java.time.LocalDate;
 
 /**
