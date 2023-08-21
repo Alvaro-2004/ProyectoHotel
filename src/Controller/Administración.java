@@ -5,6 +5,7 @@ package Controller;
  * @author Álvaro Álvarez R
  */
 public interface Administración<Type> {
+
     
     public boolean isComplete();
     public Type Buscar(String texto);
