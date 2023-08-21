@@ -6,9 +6,7 @@ package Models;
  */
 public interface Administración<Type> {
 
-    public Type Buscar();
-
-    public boolean Actualiazr(Type obj);
+    public Type Buscar(String texto);
 
     public boolean Eliminar(Type obj);
 
