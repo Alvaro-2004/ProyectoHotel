@@ -25,6 +25,7 @@ public class Clientes implements Administración<Clientes>{
         this.fechaNacimiento = fechaNacimiento;
         this.correo = correo;
         this.telefono = telefono;
+        this.reserva=false;
         this.edad();
     }
     public Clientes(String cedula, String nombre, String correo, String telefono) {
@@ -33,6 +34,7 @@ public class Clientes implements Administración<Clientes>{
         this.telefono = telefono;
         this.fechaNacimiento = null;
         this.correo = correo;
+        this.reserva=false;
     }
     public Clientes(String cedula, String nombre, String correo) {
         this.cedula = cedula;
@@ -40,6 +42,7 @@ public class Clientes implements Administración<Clientes>{
         this.telefono = "";
         this.fechaNacimiento = null;
         this.correo = correo;
+        this.reserva=false;
     }
     public Clientes(String cedula, String nombre) {
         this.cedula = cedula;
@@ -47,6 +50,7 @@ public class Clientes implements Administración<Clientes>{
         this.telefono = "";
         this.fechaNacimiento = null;
         this.correo = "";
+        this.reserva=false;
     }
     
     public void edad(){

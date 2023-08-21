@@ -14,7 +14,7 @@ public class Empleados implements Administración<Empleados> {
     private String nombre;
     private String telefono;
     private EnumPuesto puesto;
-    private double salario;
+    private int salario;
     private ArrayList<Empleados> empleados;
 
     public Empleados(String cedula, String nombre, String telefono, EnumPuesto puesto, double salario) {
@@ -22,7 +22,14 @@ public class Empleados implements Administración<Empleados> {
         this.nombre = nombre;
         this.telefono = telefono;
         this.puesto = puesto;
-        this.salario = salario;
+        this.salario();
+    }
+    public Empleados(String cedula, String nombre, EnumPuesto puesto, double salario) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.telefono = "";
+        this.puesto = puesto;
+        this.salario();
     }
 
     public void setNombre(String nombre) {
@@ -56,7 +63,15 @@ public class Empleados implements Administración<Empleados> {
     public double getSalario() {
         return salario;
     }
-
+    public void salario(){
+        switch(puesto){
+            case Gerente -> this.salario=1400000;
+            case Recepcionista -> this.salario=800000;
+            case Conserje -> this.salario=550000;
+            case Supervisor -> this.salario=1100000;
+            case Mantenimiento -> this.salario=650000;
+        }
+    }
     @Override
     public boolean isComplete() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
