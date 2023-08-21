@@ -3,7 +3,7 @@ package Models;
 
 import Controller.Administración;
 import Controller.EnumTipo;
-import Controller.EnumEstado;
+import java.util.ArrayList;
 
 /**
  *
@@ -12,13 +12,15 @@ import Controller.EnumEstado;
 public class Habitaciones implements Administración<Habitaciones>{
     private int numeroHabitacion;
     private EnumTipo tipo;
-    private EnumEstado estado;
+    private boolean estado;
     private double precio;
+    private ArrayList<Habitaciones> array;
 
-    public Habitaciones(int numeroHabitacion, EnumTipo tipo, EnumEstado estado) {
+    public Habitaciones(int numeroHabitacion, EnumTipo tipo) {
+        array = new ArrayList<>();
         this.numeroHabitacion = numeroHabitacion;
         this.tipo = tipo;
-        this.estado = estado;
+        this.estado = false;
     }
 
     public int getNumeroHabitacion() {
@@ -29,7 +31,7 @@ public class Habitaciones implements Administración<Habitaciones>{
         return tipo;
     }
 
-    public EnumEstado getEstado() {
+    public boolean getEstado() {
         return estado;
     }
 
@@ -37,28 +39,63 @@ public class Habitaciones implements Administración<Habitaciones>{
         return precio;
     }
 
-    public void setEstado(EnumEstado estado) {
-        this.estado = estado;
+    public void setTipo(EnumTipo tipo) {
+        this.tipo = tipo;
     }
-
+    
+    
+    public void salario() {
+        switch (this.tipo) {
+            case Individual ->
+                this.precio = 45000;
+            case Doble ->
+                this.precio = 80000;
+            case Suite ->
+                this.precio = 140000;
+        }
+    }
     @Override
     public boolean isComplete() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    public boolean Actualizar(Habitaciones obj, EnumTipo tipo){
+        for (Habitaciones habitacion : array){
+            if (habitacion.equals(obj)){
+                habitacion.setTipo(tipo);
+                return true;
+            }
+        }
+        return false;
+    }
     @Override
     public Habitaciones Buscar(String texto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        for (Habitaciones habitacion : array){
+            if (Integer.toString(habitacion.getNumeroHabitacion()).equals(texto)){
+                return habitacion;
+            }
+        }
+        return null;
     }
 
     @Override
     public boolean Eliminar(Habitaciones obj) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        for (Habitaciones habitacion : array){
+            if (habitacion.equals(obj)){
+                return array.remove(obj);
+            }
+        }
+        return false;
     }
 
     @Override
     public boolean Agregar(Habitaciones obj) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        for (Habitaciones habitacion : array){
+            if (!habitacion.equals(obj)){
+                return array.add(obj);
+            }
+        }
+        return false;
     }
     
     

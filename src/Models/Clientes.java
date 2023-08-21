@@ -20,6 +20,7 @@ public class Clientes implements Administración<Clientes>{
     private ArrayList<Clientes> array;
 
     public Clientes(String cedula, String nombre, LocalDate fechaNacimiento, String correo, String telefono) {
+        array = new ArrayList<>();
         this.cedula = cedula;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
@@ -29,6 +30,7 @@ public class Clientes implements Administración<Clientes>{
         this.edad();
     }
     public Clientes(String cedula, String nombre, String correo, String telefono) {
+        array = new ArrayList<>();
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -37,6 +39,7 @@ public class Clientes implements Administración<Clientes>{
         this.reserva=false;
     }
     public Clientes(String cedula, String nombre, String correo) {
+        array = new ArrayList<>();
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = "";
@@ -45,6 +48,7 @@ public class Clientes implements Administración<Clientes>{
         this.reserva=false;
     }
     public Clientes(String cedula, String nombre) {
+        array = new ArrayList<>();
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = "";
