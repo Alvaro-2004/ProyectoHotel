@@ -2,6 +2,7 @@ package Models;
 
 import Controller.Administración;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -64,9 +65,10 @@ public class Servicios implements Administración<Servicios> {
 
     @Override
     public boolean Eliminar(Servicios obj) {
-        for(Servicios servicios : this.hashmap.values()){
-            if (servicios.getNombreServicio().equals(obj.getNombreServicio())){
-                return this.hashmap.remove(obj.getCodigoServicio(), obj);
+        for (Map.Entry<Integer, Servicios> entry : hashmap.entrySet()) {
+            if (entry.getValue().equals(obj)) {
+                hashmap.remove(entry.getKey());
+                return true;
             }
         }
         return false;

@@ -3,8 +3,7 @@ package Models;
 
 import Controller.Administración;
 import Controller.EnumTipo;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
 
 /**
  *
@@ -15,10 +14,10 @@ public class Habitaciones implements Administración<Habitaciones>{
     private EnumTipo tipo;
     private boolean estado;
     private double precio;
-    private HashMap<Integer,Habitaciones> hashmap;
+    private HashSet<Habitaciones> hashset;
 
     public Habitaciones(int numeroHabitacion, EnumTipo tipo) {
-        hashmap = new HashMap<>();
+        hashset = new HashSet<>();
         this.numeroHabitacion = numeroHabitacion;
         this.tipo = tipo;
         this.estado = false;
@@ -61,7 +60,7 @@ public class Habitaciones implements Administración<Habitaciones>{
     }
 
     public boolean Actualizar(Habitaciones obj, EnumTipo tipo){
-        for (Habitaciones habitacion : hashmap.values()){
+        for (Habitaciones habitacion : hashset){
             if (habitacion.equals(obj)){
                 habitacion.setTipo(tipo);
                 return true;
@@ -71,7 +70,7 @@ public class Habitaciones implements Administración<Habitaciones>{
     }
     @Override
     public Habitaciones Buscar(String texto) {
-        for (Habitaciones habitacion : hashmap.values()){
+        for (Habitaciones habitacion : hashset){
             if (Integer.toString(habitacion.getNumeroHabitacion()).equals(texto)){
                 return habitacion;
             }
@@ -81,10 +80,9 @@ public class Habitaciones implements Administración<Habitaciones>{
 
     @Override
     public boolean Eliminar(Habitaciones obj) {
-        for (Map.Entry<Integer, Habitaciones> entry : hashmap.entrySet()) {
-            if (entry.getValue().equals(obj)) {
-                hashmap.remove(entry.getKey());
-                return true;
+        for (Habitaciones habitacion : hashset){
+            if (habitacion.equals(obj)){
+                return hashset.remove(obj);
             }
         }
         return false;
@@ -92,10 +90,9 @@ public class Habitaciones implements Administración<Habitaciones>{
 
     @Override
     public boolean Agregar(Habitaciones obj) {
-        for (Habitaciones habitacion : hashmap.values()){
+        for (Habitaciones habitacion : hashset){
             if (!habitacion.equals(obj)){
-                hashmap.put(obj.getNumeroHabitacion(), obj);
-                return true;
+                return hashset.add(obj);
             }
         }
         return false;
