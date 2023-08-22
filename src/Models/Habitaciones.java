@@ -22,7 +22,7 @@ public class Habitaciones implements Administración<Habitaciones>{
         hashset = new HashSet<>();
         this.numeroHabitacion = numeroHabitacion;
         this.tipo = tipo;
-        this.estado = false;
+        this.estado = true;
         this.precioHabitacion();
         this.disponible();
     }
@@ -46,6 +46,11 @@ public class Habitaciones implements Administración<Habitaciones>{
     public void setTipo(EnumTipo tipo) {
         this.tipo = tipo;
     }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+    
     
     
     public void precioHabitacion() {

@@ -77,6 +77,21 @@ public class FrmHotel extends javax.swing.JFrame {
         });
     }
 
+    /*public void setDiaEntrada(LocalDate diaEntrada) {
+        if (diaEntrada.isBefore(LocalDate.now())) {
+            throw new IllegalArgumentException("La fecha de entrada no puede ser en el futuro");
+        }
+        this.diaEntrada = diaEntrada;
+        calcularTiempoUso();
+    }
+
+    public void setDiaSalida(LocalDate diaSalida) {
+        if (diaSalida.isBefore(diaEntrada)) {
+            throw new IllegalArgumentException("La fecha de salida debe ser posterior a la fecha de entrada");
+        }
+        this.diaSalida = diaSalida;
+        calcularTiempoUso();
+    }*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
 }
