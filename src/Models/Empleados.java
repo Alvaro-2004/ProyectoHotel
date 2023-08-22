@@ -18,6 +18,7 @@ public class Empleados implements Administración<Empleados> {
     private ArrayList<Empleados> empleados;
 
     public Empleados(String cedula, String nombre, String telefono, EnumPuesto puesto, double salario) {
+        empleados = new ArrayList<>();
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -26,6 +27,7 @@ public class Empleados implements Administración<Empleados> {
     }
 
     public Empleados(String cedula, String nombre, EnumPuesto puesto, double salario) {
+        empleados = new ArrayList<>();
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = "";
@@ -66,7 +68,7 @@ public class Empleados implements Administración<Empleados> {
     }
 
     public void salario() {
-        switch (puesto) {
+        switch (this.puesto) {
             case Gerente ->
                 this.salario = 1400000;
             case Recepcionista ->

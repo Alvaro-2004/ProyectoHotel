@@ -20,33 +20,41 @@ public class Clientes implements Administración<Clientes>{
     private ArrayList<Clientes> array;
 
     public Clientes(String cedula, String nombre, LocalDate fechaNacimiento, String correo, String telefono) {
+        array = new ArrayList<>();
         this.cedula = cedula;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.correo = correo;
         this.telefono = telefono;
+        this.reserva=false;
         this.edad();
     }
     public Clientes(String cedula, String nombre, String correo, String telefono) {
+        array = new ArrayList<>();
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = telefono;
         this.fechaNacimiento = null;
         this.correo = correo;
+        this.reserva=false;
     }
     public Clientes(String cedula, String nombre, String correo) {
+        array = new ArrayList<>();
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = "";
         this.fechaNacimiento = null;
         this.correo = correo;
+        this.reserva=false;
     }
     public Clientes(String cedula, String nombre) {
+        array = new ArrayList<>();
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = "";
         this.fechaNacimiento = null;
         this.correo = "";
+        this.reserva=false;
     }
     
     public void edad(){
