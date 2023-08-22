@@ -1,8 +1,7 @@
 package Models;
 
 import Controller.Administración;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.HashSet;
 
 /**
  *
@@ -13,12 +12,10 @@ public class Servicios implements Administración<Servicios> {
     private String nombreServicio;
     private String descripcion;
     private double precio;
-    private HashMap<Integer, Servicios> hashmap;
+    private HashSet<Servicios> hashset;
 
     public Servicios(int codigoServicio, String nombreServicio, String descripcion, double precio) {
-
-        hashmap = new HashMap<>();
-
+        hashset = new HashSet<>();
         this.codigoServicio = codigoServicio;
         this.nombreServicio = nombreServicio;
         this.descripcion = descripcion;
@@ -53,9 +50,9 @@ public class Servicios implements Administración<Servicios> {
     public boolean isComplete() {
         return !this.descripcion.equals("") && this.precio <= 0;
     }
-
+    @Override
     public Servicios Buscar(String texto) {
-            for (Servicios servicio : hashmap.values()) {
+            for (Servicios servicio : hashset) {
             if (servicio.getNombreServicio().equals(texto)) {
                 return servicio;
             }
@@ -65,21 +62,19 @@ public class Servicios implements Administración<Servicios> {
 
     @Override
     public boolean Eliminar(Servicios obj) {
-        for (Map.Entry<Integer, Servicios> entry : hashmap.entrySet()) {
-            if (entry.getValue().equals(obj)) {
-                hashmap.remove(entry.getKey());
-                return true;
+        for (Servicios servicio : hashset) {
+            if (servicio.equals(obj)) {
+                return hashset.remove(obj);
             }
         }
-
         return false;
     }
-
+    
+    @Override
     public boolean Agregar(Servicios obj) {
-        for(Servicios servicios : this.hashmap.values()){
-            if (!servicios.getNombreServicio().equals(obj.getNombreServicio())){
-                hashmap.put(obj.getCodigoServicio(), obj);
-                return true;
+        for (Servicios servicio : hashset) {
+            if (!servicio.equals(obj)) {
+                return hashset.add(obj);
             }
         }
         return false;
