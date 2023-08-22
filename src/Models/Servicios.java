@@ -8,12 +8,7 @@ import java.util.Map;
  *
  * @author Álvaro Álvarez R
  */
-<<<<<<< HEAD
-public class Servicios implements Administración {
-=======
 public class Servicios implements Administración<Servicios> {
->>>>>>> 2a8fbfec7b607678568a77a7226a5396db887716
-
     private int codigoServicio;
     private String nombreServicio;
     private String descripcion;
@@ -21,10 +16,9 @@ public class Servicios implements Administración<Servicios> {
     private HashMap<Integer, Servicios> hashmap;
 
     public Servicios(int codigoServicio, String nombreServicio, String descripcion, double precio) {
-<<<<<<< HEAD
-=======
+
         hashmap = new HashMap<>();
->>>>>>> 2a8fbfec7b607678568a77a7226a5396db887716
+
         this.codigoServicio = codigoServicio;
         this.nombreServicio = nombreServicio;
         this.descripcion = descripcion;
@@ -60,18 +54,6 @@ public class Servicios implements Administración<Servicios> {
         return !this.descripcion.equals("") && this.precio <= 0;
     }
 
-    @Override
-<<<<<<< HEAD
-    public Object Buscar(String texto) {
-       
-        return null;
-       
-    }
-
-    @Override
-    public boolean Eliminar(Object obj) {
-        
-=======
     public Servicios Buscar(String texto) {
             for (Servicios servicio : hashmap.values()) {
             if (servicio.getNombreServicio().equals(texto)) {
@@ -89,16 +71,10 @@ public class Servicios implements Administración<Servicios> {
                 return true;
             }
         }
->>>>>>> 2a8fbfec7b607678568a77a7226a5396db887716
+
         return false;
     }
 
-    @Override
-<<<<<<< HEAD
-    public boolean Agregar(Object obj) {
-        
-
-=======
     public boolean Agregar(Servicios obj) {
         for(Servicios servicios : this.hashmap.values()){
             if (!servicios.getNombreServicio().equals(obj.getNombreServicio())){
@@ -106,7 +82,6 @@ public class Servicios implements Administración<Servicios> {
                 return true;
             }
         }
->>>>>>> 2a8fbfec7b607678568a77a7226a5396db887716
         return false;
     }
 
