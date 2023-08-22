@@ -14,13 +14,17 @@ public class Habitaciones implements Administración<Habitaciones>{
     private EnumTipo tipo;
     private boolean estado;
     private double precio;
+    private HabitacionesDisponibles disponibles;
     private HashSet<Habitaciones> hashset;
 
     public Habitaciones(int numeroHabitacion, EnumTipo tipo) {
+        disponibles = new HabitacionesDisponibles();
         hashset = new HashSet<>();
         this.numeroHabitacion = numeroHabitacion;
         this.tipo = tipo;
         this.estado = false;
+        this.precioHabitacion();
+        this.disponible();
     }
 
     public int getNumeroHabitacion() {
@@ -44,7 +48,7 @@ public class Habitaciones implements Administración<Habitaciones>{
     }
     
     
-    public void salario() {
+    public void precioHabitacion() {
         switch (this.tipo) {
             case Individual ->
                 this.precio = 45000;
@@ -52,6 +56,17 @@ public class Habitaciones implements Administración<Habitaciones>{
                 this.precio = 80000;
             case Suite ->
                 this.precio = 140000;
+        }
+    }
+    
+    public void disponible(){
+        switch (this.tipo) {
+            case Individual ->
+                this.disponibles.agregar1(this);
+            case Doble ->
+                this.disponibles.agregar2(this);
+            case Suite ->
+                this.disponibles.agregar3(this);
         }
     }
     @Override
