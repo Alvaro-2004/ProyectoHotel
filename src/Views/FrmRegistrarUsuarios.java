@@ -37,6 +37,14 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
         jLabelCorreo = new javax.swing.JLabel();
         jSpinnerFechaNacimientoCliente = new javax.swing.JSpinner();
         jLabelFechaNacimiento = new javax.swing.JLabel();
+        btnRegistrar = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        mnHabitaciones = new javax.swing.JMenuItem();
+        mnClientes = new javax.swing.JMenuItem();
+        mnReservas = new javax.swing.JMenuItem();
+        mnServicios = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,6 +81,49 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
 
         jLabelFechaNacimiento.setText("Fecha de Nacimiento");
 
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+
+        jMenu1.setText("Administración");
+
+        jMenuItem1.setText("Empleados");
+        jMenu1.add(jMenuItem1);
+
+        mnHabitaciones.setText("Habitaciones");
+        mnHabitaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnHabitacionesActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnHabitaciones);
+
+        mnClientes.setText("Clientes");
+        mnClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnClientesActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnClientes);
+
+        mnReservas.setText("Reservas");
+        mnReservas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnReservasActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnReservas);
+
+        mnServicios.setText("Servicios");
+        jMenu1.add(mnServicios);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,21 +133,9 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
                 .addComponent(jLabelNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelTelefono)
-                .addGap(104, 104, 104))
+                .addGap(120, 120, 120))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TxtNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(TxtTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(TxtCedulaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
-                .addComponent(TxtCorreoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addGap(79, 79, 79)
                 .addComponent(jLabelCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelCorreo)
@@ -108,11 +147,24 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
                         .addComponent(jLabelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(271, 271, 271)
-                        .addComponent(jLabelFechaNacimiento))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(232, 232, 232)
-                        .addComponent(jSpinnerFechaNacimientoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabelFechaNacimiento)))
+                .addContainerGap(234, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(TxtCedulaCliente, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TxtNombreCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TxtCorreoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                    .addComponent(TxtTelefonoCliente))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(232, 232, 232)
+                .addComponent(jSpinnerFechaNacimientoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,7 +190,9 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabelFechaNacimiento)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSpinnerFechaNacimientoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSpinnerFechaNacimientoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistrar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -156,6 +210,22 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
     private void TxtTelefonoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtTelefonoClienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtTelefonoClienteActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void mnHabitacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnHabitacionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnHabitacionesActionPerformed
+
+    private void mnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnClientesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnClientesActionPerformed
+
+    private void mnReservasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnReservasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnReservasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -213,12 +283,20 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
     private javax.swing.JTextField TxtCorreoCliente;
     private javax.swing.JTextField TxtNombreCliente;
     private javax.swing.JTextField TxtTelefonoCliente;
+    private javax.swing.JButton btnRegistrar;
     private javax.swing.JLabel jLabelCedula;
     private javax.swing.JLabel jLabelCorreo;
     private javax.swing.JLabel jLabelFechaNacimiento;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelTelefono;
     private javax.swing.JLabel jLabelTitulo;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JSpinner jSpinnerFechaNacimientoCliente;
+    private javax.swing.JMenuItem mnClientes;
+    private javax.swing.JMenuItem mnHabitaciones;
+    private javax.swing.JMenuItem mnReservas;
+    private javax.swing.JMenuItem mnServicios;
     // End of variables declaration//GEN-END:variables
 }

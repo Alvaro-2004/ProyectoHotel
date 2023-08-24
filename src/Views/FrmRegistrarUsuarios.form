@@ -1,10 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="jMenu1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Administraci&#xf3;n"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Empleados"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnHabitaciones">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Habitaciones"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnHabitacionesActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnClientes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clientes"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnClientesActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnReservas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Reservas"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnReservasActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnServicios">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Servicios"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+      </SubComponents>
+    </Menu>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
   <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
@@ -28,24 +76,10 @@
               <Component id="jLabelNombre" min="-2" pref="94" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jLabelTelefono" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="TxtNombreCliente" min="-2" pref="264" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="TxtTelefonoCliente" min="-2" pref="192" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="TxtCedulaCliente" min="-2" pref="202" max="-2" attributes="0"/>
-              <EmptySpace pref="193" max="32767" attributes="0"/>
-              <Component id="TxtCorreoCliente" min="-2" pref="286" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
               <Component id="jLabelCedula" min="-2" pref="112" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jLabelCorreo" min="-2" max="-2" attributes="0"/>
@@ -61,12 +95,28 @@
                       <EmptySpace min="-2" pref="271" max="-2" attributes="0"/>
                       <Component id="jLabelFechaNacimiento" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="232" max="-2" attributes="0"/>
-                      <Component id="jSpinnerFechaNacimientoCliente" min="-2" pref="191" max="-2" attributes="0"/>
-                  </Group>
+              </Group>
+              <EmptySpace pref="234" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="TxtCedulaCliente" alignment="0" max="32767" attributes="0"/>
+                  <Component id="TxtNombreCliente" alignment="0" pref="264" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="TxtCorreoCliente" pref="286" max="32767" attributes="0"/>
+                  <Component id="TxtTelefonoCliente" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="232" max="-2" attributes="0"/>
+              <Component id="jSpinnerFechaNacimientoCliente" min="-2" pref="191" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="btnRegistrar" min="-2" pref="89" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -98,7 +148,10 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabelFechaNacimiento" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jSpinnerFechaNacimientoCliente" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jSpinnerFechaNacimientoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnRegistrar" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -161,6 +214,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Fecha de Nacimiento"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnRegistrar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registrar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistrarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
