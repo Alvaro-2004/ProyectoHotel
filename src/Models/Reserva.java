@@ -23,10 +23,8 @@ public class Reserva {
     private double subTotal;
     private double impuesto;
     private double montoTotal;
-    private ArrayList<Reserva> reservas;
 
     public Reserva(String cedulaCliente, Habitaciones habitacion, LocalDate fechaEntrada, LocalDate fechaSalida, EnumEstado estado) {
-        reservas = new ArrayList<>();
         this.numeroReserva= numero++;
         this.cedulaCliente = cedulaCliente;
         this.habitacion = habitacion;
@@ -38,7 +36,6 @@ public class Reserva {
     }
 
     public Reserva(String cedulaCliente, Habitaciones habitacion, LocalDate fechaEntrada, LocalDate fechaSalida) {
-        reservas = new ArrayList<>();
         this.numeroReserva= numero++;
         this.cedulaCliente = cedulaCliente;
         this.habitacion = habitacion;
@@ -88,11 +85,6 @@ public class Reserva {
     public double getImpuesto() {
         return impuesto;
     }
-    
-
-    public ArrayList<Reserva> getReservas() {
-        return reservas;
-    }
 
     public void setEstado(EnumEstado estado) {
         this.estado = estado;
@@ -100,11 +92,6 @@ public class Reserva {
 
     public void setMontoTotal(double montoTotal) {
         this.montoTotal = montoTotal;
-    }
-    
-    public Clientes registrado(){
-        return cliente.Buscar(cedulaCliente);
-        //Si retorna null se debe agregar el cliente
     }
     
     public void tiempo() {
@@ -115,15 +102,6 @@ public class Reserva {
         this.montoTotal=habitacion.getPrecio()*this.tiempoReservado;
         this.impuesto=this.montoTotal-(this.montoTotal/(1+0.13));
         this.subTotal=this.montoTotal-this.impuesto;
-    }
-    
-    public Reserva Buscar(int numero) {
-        for (Reserva reserva : reservas){
-            if (reserva.getNumeroReserva()==numero){
-                return reserva;
-            }
-        }
-        return null;
     }
     
     public boolean activar(){

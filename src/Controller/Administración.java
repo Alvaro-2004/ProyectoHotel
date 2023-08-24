@@ -6,8 +6,7 @@ package Controller;
  */
 public interface Administración<Type> {
 
-    
-    public boolean isComplete();
+
     public Type Buscar(String texto);
     public boolean Eliminar(Type obj);
     public boolean Agregar(Type obj);

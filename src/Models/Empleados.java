@@ -8,17 +8,15 @@ import java.util.ArrayList;
  *
  * @author Álvaro Álvarez R
  */
-public class Empleados implements Administración<Empleados> {
+public class Empleados implements AdministracionClases<Empleados> {
 
     private String cedula;
     private String nombre;
     private String telefono;
     private EnumPuesto puesto;
     private int salario;
-    private ArrayList<Empleados> empleados;
 
     public Empleados(String cedula, String nombre, String telefono, EnumPuesto puesto, double salario) {
-        empleados = new ArrayList<>();
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -27,7 +25,6 @@ public class Empleados implements Administración<Empleados> {
     }
 
     public Empleados(String cedula, String nombre, EnumPuesto puesto, double salario) {
-        empleados = new ArrayList<>();
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = "";
@@ -87,48 +84,13 @@ public class Empleados implements Administración<Empleados> {
         return !this.telefono.equals("") && !this.nombre.equals("") && !this.puesto.equals("");
     }
 
-    @Override
-    public Empleados Buscar(String texto) {
-        for (Empleados empleado : empleados) {
-            if (empleado.getNombre().equals(texto)) {
-                return empleado;
-            }
-        }
-        return null;
-    }
-
-    @Override
-    public boolean Eliminar(Empleados obj) {
-        for (Empleados empleado : empleados) {
-            if (empleado.equals(obj)) {
-                return empleados.remove(empleado);
-            }
-        }
-
-        return false;
-    }
-
-    @Override
-    public boolean Agregar(Empleados obj) {
-        for (Empleados empleado : empleados) {
-            if (empleado != (obj)) {
-                return empleados.add(obj);
-            }
-        }
-        return false;
-    }
-
-    public boolean Actualizar(Empleados obj, String nombre, String telefono, EnumPuesto puesto) {
-        for (Empleados empleado : empleados) {
-            if (empleado.equals(obj)) {
+    public boolean Actualizar(String nombre, String telefono, EnumPuesto puesto) {
                 if (this.isComplete()) {
                     this.setNombre(nombre);
                     this.setTelefono(telefono);
                     this.setPuesto(puesto);
                     return true;
                 }
-            }
-        }
         return false;
     }
 }

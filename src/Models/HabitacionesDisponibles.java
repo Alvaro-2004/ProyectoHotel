@@ -1,6 +1,7 @@
 package Models;
 
 import Models.Habitaciones;
+import Models.Habitaciones;
 import java.util.ArrayList;
 
 /**
@@ -8,7 +9,6 @@ import java.util.ArrayList;
  * @author Álvaro Álvarez R
  */
 public class HabitacionesDisponibles {
-    private Habitaciones habitacion;
     private ArrayList<Habitaciones> habitacionIndividual;
     private ArrayList<Habitaciones> habitacionDoble;
     private ArrayList<Habitaciones> habitacionSuite;
@@ -18,6 +18,20 @@ public class HabitacionesDisponibles {
         habitacionDoble = new ArrayList<>();
         habitacionSuite = new ArrayList<>();
     }
+
+    public void setIndividualClear() {
+        this.habitacionIndividual.clear();
+    }
+
+    public void setDobleClear() {
+        this.habitacionDoble.clear();
+    }
+
+    public void setSuiteClear() {
+        this.habitacionSuite.clear();
+    }
+    
+    
     
     public boolean agregar1(Habitaciones obj){
         return habitacionIndividual.add(obj);
