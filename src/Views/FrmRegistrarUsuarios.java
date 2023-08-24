@@ -201,6 +201,7 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
                 txtTelefono.setText("");
                 txtCorreo.setText("");
                 txtFecha.setText("año/mes/dia");
+                JOptionPane.showMessageDialog(null, "Se agregó correctamente.");
             } catch (DateTimeParseException e){
                 JOptionPane.showMessageDialog(null, "La fecha ingresada no es válida.");
             }
