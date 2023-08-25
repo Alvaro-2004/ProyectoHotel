@@ -165,10 +165,10 @@ public class InternalFrameServicios extends javax.swing.JInternalFrame {
         }
         if (!"".equals(txtDesc.getText())&&Integer.parseInt(txtPrecio.getText())>0&&txtNombre.getText()!=""){
         controller.Agregar(new Servicios(txtNombre.getText(), txtDesc.getText(), Integer.parseInt(txtPrecio.getText())));
-        txtCodigo.setText("");
         txtNombre.setText("");
         txtDesc.setText("");
         txtPrecio.setText("");
+        txtCodigo.setText(String.valueOf(Servicios.numServicio));
         JOptionPane.showMessageDialog(null, "Se agregó correctamente");
         }else{
              JOptionPane.showMessageDialog(null, "Favor, ingresar datos");

@@ -52,6 +52,12 @@ public class Clientes implements AdministracionClases<Clientes> {
         this.correo = "";
         this.reserva=false;
     }
+    public Clientes(String cedula){
+        this.cedula=cedula;
+        this.nombre="";
+        this.correo="";
+        this.telefono="";
+    }
     
 
     public String getCedula() {
@@ -114,6 +120,7 @@ public class Clientes implements AdministracionClases<Clientes> {
         }
         return false;
     }
+    
     
     
     public void edad(){

@@ -6,6 +6,7 @@ package Views;
 
 import Controller.Sistema.ControllerClientes;
 import Models.Clientes;
+import java.awt.event.KeyEvent;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,6 +25,7 @@ public class InternalFrameClientes extends javax.swing.JInternalFrame {
     public InternalFrameClientes() {
         initComponents();
         this.clientes = new ControllerClientes(); 
+        this.clientes.readAll();
         for (Clientes cliente : clientes.arrayClientes){
             table.addRow(new Object[]{
                 cliente.getNombre(),
@@ -143,7 +145,13 @@ public class InternalFrameClientes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tblMembersMouseClicked
 
     private void tblMembersKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tblMembersKeyReleased
-
+        if (evt.getKeyCode()==KeyEvent.VK_DELETE){
+            int row = this.tblMembers.getSelectedRow();
+            if (row>-1){
+                Object id = tblMembers.getValueAt(row, 0);
+                this.clientes.Eliminar(new Clientes(id.toString()));
+            }
+        }
     }//GEN-LAST:event_tblMembersKeyReleased
 
     private void TxtFiltroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtFiltroActionPerformed
@@ -162,7 +170,7 @@ public class InternalFrameClientes extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_TxtFiltroKeyPressed
 
     private void TxtFiltroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtFiltroKeyReleased
-
+         Table.filter(tblMembers, this.TxtFiltro.getText());
     }//GEN-LAST:event_TxtFiltroKeyReleased
 
 

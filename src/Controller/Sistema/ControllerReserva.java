@@ -1,6 +1,7 @@
 
 package Controller.Sistema;
 
+import Models.Clientes;
 import Models.Reserva;
 import java.util.ArrayList;
 
@@ -9,7 +10,8 @@ import java.util.ArrayList;
  * @author sebas
  */
 public class ControllerReserva {
-    
+    private Clientes cliente;
+    private ControllerClientes controller;
     private ArrayList<Reserva> reservas;
 
     public ControllerReserva() {
@@ -35,6 +37,14 @@ public class ControllerReserva {
     
     public void cancelar(Reserva obj){
         obj.cancelar();
+    }
+    public String buscarCliente(String ced){
+        for (Clientes cliente:controller.arrayClientes){
+            if(ced.equals(cliente)){
+                return cliente.getNombre();
+            }
+        }
+        return "No registrado";
     }
     
 }

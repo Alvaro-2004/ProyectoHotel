@@ -16,7 +16,7 @@ public class Empleados implements AdministracionClases<Empleados> {
     private EnumPuesto puesto;
     private int salario;
 
-    public Empleados(String cedula, String nombre, String telefono, EnumPuesto puesto, double salario) {
+    public Empleados(String cedula, String nombre, String telefono, EnumPuesto puesto) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -24,7 +24,7 @@ public class Empleados implements AdministracionClases<Empleados> {
         this.salario();
     }
 
-    public Empleados(String cedula, String nombre, EnumPuesto puesto, double salario) {
+    public Empleados(String cedula, String nombre, EnumPuesto puesto) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.telefono = "";

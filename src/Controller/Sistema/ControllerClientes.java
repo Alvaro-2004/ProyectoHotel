@@ -3,6 +3,7 @@ package Controller.Sistema;
 
 import Controller.Administración;
 import Models.Clientes;
+import Views.View;
 import java.util.ArrayList;
 
 /**
@@ -12,7 +13,9 @@ import java.util.ArrayList;
 public class ControllerClientes implements Administración<Clientes>{
     
     public ArrayList<Clientes> arrayClientes;
-
+    private Clientes cliente;
+    private View view;
+    
     public ControllerClientes() {
         this.arrayClientes = new ArrayList<>();
     }
@@ -47,5 +50,13 @@ public class ControllerClientes implements Administración<Clientes>{
         }
         return false;
     }  
-    
+    public void readAll() {
+        Clientes[] members=this.toArray();
+        if (members.length>0){
+            this.view.displayAll(members);
+        }
+    }
+    public Clientes[] toArray() {
+        return this.arrayClientes.toArray(new Clientes[0]);
+    }
 }

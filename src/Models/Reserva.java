@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author Álvaro Álvarez R
  */
 public class Reserva {
-    private static int numero = 0;
+    public static int numero = 0;
     private int numeroReserva;
     private Clientes cliente;
     private String cedulaCliente;

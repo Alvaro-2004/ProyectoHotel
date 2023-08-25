@@ -66,6 +66,7 @@ public class FrmSistemaHotel extends javax.swing.JFrame {
 
         jMenuSistema.setText("Administración");
 
+        jMenuItemClientes.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jMenuItemClientes.setText("Clientes");
         jMenuItemClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +75,7 @@ public class FrmSistemaHotel extends javax.swing.JFrame {
         });
         jMenuSistema.add(jMenuItemClientes);
 
+        jMenuItemEmpleados.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jMenuItemEmpleados.setText("Empleados");
         jMenuItemEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +84,7 @@ public class FrmSistemaHotel extends javax.swing.JFrame {
         });
         jMenuSistema.add(jMenuItemEmpleados);
 
+        jMenuItemHabitaciones.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jMenuItemHabitaciones.setText("Habitaciones");
         jMenuItemHabitaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +93,7 @@ public class FrmSistemaHotel extends javax.swing.JFrame {
         });
         jMenuSistema.add(jMenuItemHabitaciones);
 
+        jMenuItemReserva.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jMenuItemReserva.setText("Reserva");
         jMenuItemReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +102,7 @@ public class FrmSistemaHotel extends javax.swing.JFrame {
         });
         jMenuSistema.add(jMenuItemReserva);
 
+        jMenuItemServicios.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jMenuItemServicios.setText("Servicios");
         jMenuItemServicios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,6 +111,7 @@ public class FrmSistemaHotel extends javax.swing.JFrame {
         });
         jMenuSistema.add(jMenuItemServicios);
 
+        jMenuItemRegistrarUsuarios.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jMenuItemRegistrarUsuarios.setText("RegistrarUsuarios");
         jMenuItemRegistrarUsuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
