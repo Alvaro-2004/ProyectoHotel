@@ -1,6 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package Views;
 
@@ -13,18 +13,18 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Álvaro Álvarez R
+ * @author Usuario
  */
-public class FrmRegistrarUsuarios extends javax.swing.JFrame {
+public class InternalFrameUsuarios extends javax.swing.JInternalFrame {
+
+    private ControllerClientes controller;
 
     /**
-     * Creates new form FrmHotel
+     * Creates new form InternalFrameUsuarios
      */
-    private ControllerClientes  controller;
-    public FrmRegistrarUsuarios() {
+    public InternalFrameUsuarios() {
         initComponents();
         controller = new ControllerClientes();
-        
     }
 
     /**
@@ -36,7 +36,11 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelCorreo = new javax.swing.JLabel();
+        jLabelFechaNacimiento = new javax.swing.JLabel();
+        txtFecha = new javax.swing.JTextField();
         jLabelTitulo = new javax.swing.JLabel();
+        btnAgregar = new javax.swing.JButton();
         txtNombre = new javax.swing.JTextField();
         jLabelNombre = new javax.swing.JLabel();
         txtCedula = new javax.swing.JTextField();
@@ -44,15 +48,26 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
         txtTelefono = new javax.swing.JTextField();
         jLabelTelefono = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
-        jLabelCorreo = new javax.swing.JLabel();
-        jLabelFechaNacimiento = new javax.swing.JLabel();
-        txtFecha = new javax.swing.JTextField();
-        btnAgregar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabelCorreo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabelCorreo.setText("Correo");
+
+        jLabelFechaNacimiento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabelFechaNacimiento.setText("Fecha de Nacimiento");
+
+        txtFecha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtFecha.setText("año/mes/dia");
 
         jLabelTitulo.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabelTitulo.setText("REGISTRAR USUARIOS");
+
+        btnAgregar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnAgregar.setText("AGREGAR");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,23 +96,6 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
         jLabelTelefono.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabelTelefono.setText("Teléfono");
 
-        jLabelCorreo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabelCorreo.setText("Correo");
-
-        jLabelFechaNacimiento.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-        jLabelFechaNacimiento.setText("Fecha de Nacimiento");
-
-        txtFecha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtFecha.setText("año/mes/dia");
-
-        btnAgregar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnAgregar.setText("AGREGAR");
-        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,7 +110,7 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
                             .addComponent(txtFecha))
                         .addGap(86, 86, 86)
                         .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(34, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -172,11 +170,29 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
                         .addComponent(jLabelFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        String fechaIngresada = txtFecha.getText();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+
+        try {
+            LocalDate fecha = LocalDate.parse(fechaIngresada, formatter);
+            controller.Agregar(new Clientes(txtCedula.getText(), txtNombre.getText(), fecha, txtCorreo.getText(), txtTelefono.getText()));
+            txtNombre.setText("");
+            txtCedula.setText("");
+            txtTelefono.setText("");
+            txtCorreo.setText("");
+            txtFecha.setText("año/mes/dia");
+            JOptionPane.showMessageDialog(null, "Se agregó correctamente.");
+        } catch (DateTimeParseException e) {
+            JOptionPane.showMessageDialog(null, "La fecha ingresada no es válida.");
+        }
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
@@ -190,75 +206,7 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoActionPerformed
 
-    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        String fechaIngresada = txtFecha.getText();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
 
-            try{
-                LocalDate fecha = LocalDate.parse(fechaIngresada,formatter);
-                controller.Agregar(new Clientes (txtCedula.getText(),txtNombre.getText(),fecha,txtCorreo.getText(),txtTelefono.getText()));
-                txtNombre.setText("");
-                txtCedula.setText("");
-                txtTelefono.setText("");
-                txtCorreo.setText("");
-                txtFecha.setText("año/mes/dia");
-                JOptionPane.showMessageDialog(null, "Se agregó correctamente.");
-            } catch (DateTimeParseException e){
-                JOptionPane.showMessageDialog(null, "La fecha ingresada no es válida.");
-            }
-    }//GEN-LAST:event_btnAgregarActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmRegistrarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmRegistrarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmRegistrarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmRegistrarUsuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FrmRegistrarUsuarios().setVisible(true);
-            }
-        });
-    }
-
-    /*public void setDiaEntrada(LocalDate diaEntrada) {
-        if (diaEntrada.isBefore(LocalDate.now())) {
-            throw new IllegalArgumentException("La fecha de entrada no puede ser en el futuro");
-        }
-        this.diaEntrada = diaEntrada;
-        calcularTiempoUso();
-    }
-
-    public void setDiaSalida(LocalDate diaSalida) {
-        if (diaSalida.isBefore(diaEntrada)) {
-            throw new IllegalArgumentException("La fecha de salida debe ser posterior a la fecha de entrada");
-        }
-        this.diaSalida = diaSalida;
-        calcularTiempoUso();
-    }*/
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JLabel jLabelCedula;
