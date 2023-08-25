@@ -20,10 +20,11 @@ public class FrmRegistrarUsuarios extends javax.swing.JFrame {
     /**
      * Creates new form FrmHotel
      */
-    ControllerClientes  controller;
+    private ControllerClientes  controller;
     public FrmRegistrarUsuarios() {
         initComponents();
         controller = new ControllerClientes();
+        
     }
 
     /**

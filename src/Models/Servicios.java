@@ -8,13 +8,15 @@ import java.util.HashSet;
  * @author Álvaro Álvarez R
  */
 public class Servicios implements AdministracionClases<Servicios> {
-    private int codigoServicio;
+    public static int numServicio = 1;
+    private  int codigoServicio;
     private String nombreServicio;
     private String descripcion;
     private double precio;
 
-    public Servicios(int codigoServicio, String nombreServicio, String descripcion, double precio) {
-        this.codigoServicio = codigoServicio;
+    public Servicios(String nombreServicio, String descripcion, double precio) {
+        this.codigoServicio=numServicio;
+        Servicios.numServicio++;
         this.nombreServicio = nombreServicio;
         this.descripcion = descripcion;
         this.precio = precio;
