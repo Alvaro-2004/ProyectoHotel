@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class ControllerClientes implements Administración<Clientes>{
     
-    private ArrayList<Clientes> arrayClientes;
+    public ArrayList<Clientes> arrayClientes;
 
     public ControllerClientes() {
         this.arrayClientes = new ArrayList<>();
