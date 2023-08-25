@@ -57,11 +57,11 @@ public class FrmSistemaHotel extends javax.swing.JFrame {
         jDesktopPaneSistema.setLayout(jDesktopPaneSistemaLayout);
         jDesktopPaneSistemaLayout.setHorizontalGroup(
             jDesktopPaneSistemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 952, Short.MAX_VALUE)
+            .addGap(0, 1376, Short.MAX_VALUE)
         );
         jDesktopPaneSistemaLayout.setVerticalGroup(
             jDesktopPaneSistemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 614, Short.MAX_VALUE)
+            .addGap(0, 618, Short.MAX_VALUE)
         );
 
         jMenuSistema.setText("Administración");
@@ -123,21 +123,21 @@ public class FrmSistemaHotel extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jDesktopPaneSistema)
-                .addContainerGap())
+                .addComponent(jDesktopPaneSistema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(313, 313, 313)
+                .addGap(513, 513, 513)
                 .addComponent(jLabelTextoEntrada)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(jLabelTextoEntrada)
-                .addGap(28, 28, 28)
-                .addComponent(jDesktopPaneSistema))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jDesktopPaneSistema)
+                .addContainerGap())
         );
 
         pack();

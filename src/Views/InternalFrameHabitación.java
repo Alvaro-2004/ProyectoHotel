@@ -7,6 +7,7 @@ package Views;
 import Controller.EnumTipo;
 import Controller.Sistema.ControllerHabitaciones;
 import Models.Habitaciones;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,8 +23,8 @@ public class InternalFrameHabitación extends javax.swing.JInternalFrame {
      */
     public InternalFrameHabitación() {
         initComponents();
-         controller = new ControllerHabitaciones();
-         tipo = EnumTipo.Individual;
+        controller = new ControllerHabitaciones();
+        tipo = EnumTipo.Individual;
     }
 
     /**
@@ -77,6 +78,11 @@ public class InternalFrameHabitación extends javax.swing.JInternalFrame {
         jLabel1.setText("HABITACIÓN");
         jLabel1.setFocusable(false);
 
+        txtNum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumActionPerformed(evt);
+            }
+        });
         txtNum.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNumKeyTyped(evt);
@@ -191,6 +197,15 @@ public class InternalFrameHabitación extends javax.swing.JInternalFrame {
             this.tipo = EnumTipo.Suite;
         }
     }//GEN-LAST:event_comboBoxActionPerformed
+
+    private void txtNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumActionPerformed
+
+        String inputText = txtNum.getText();
+
+        if (inputText.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "El campo está vacío. Por favor ingresa un número.");
+        }
+    }//GEN-LAST:event_txtNumActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
