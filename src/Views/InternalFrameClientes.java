@@ -36,6 +36,8 @@ public class InternalFrameClientes extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
 
+        setClosable(true);
+
         tblMembers.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

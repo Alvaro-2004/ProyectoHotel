@@ -49,6 +49,8 @@ public class InternalFrameUsuarios extends javax.swing.JInternalFrame {
         jLabelTelefono = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
 
+        setClosable(true);
+
         jLabelCorreo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabelCorreo.setText("Correo");
 

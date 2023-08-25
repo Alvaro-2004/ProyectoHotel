@@ -46,6 +46,8 @@ public class InternalFrameHabitación extends javax.swing.JInternalFrame {
         comboBox = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
 
+        setClosable(true);
+
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel4.setText("Estado:");
 

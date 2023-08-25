@@ -31,6 +31,8 @@ public class InternalFrameEmpleados extends javax.swing.JInternalFrame {
         jList1 = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
 
+        setClosable(true);
+
         jList1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };

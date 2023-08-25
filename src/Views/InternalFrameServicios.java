@@ -45,6 +45,8 @@ public class InternalFrameServicios extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
 
+        setClosable(true);
+
         txtDesc.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
 
         txtPrecio.addKeyListener(new java.awt.event.KeyAdapter() {

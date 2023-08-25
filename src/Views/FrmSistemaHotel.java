@@ -9,15 +9,17 @@ package Views;
  * @author Usuario
  */
 public class FrmSistemaHotel extends javax.swing.JFrame {
-private InternalFrameHabitación habitacion;
+
+    private InternalFrameHabitación habitacion;
 
     /**
      * Creates new form FrmSistemaBanco
      */
     public FrmSistemaHotel() {
         initComponents();
-        habitacion= new InternalFrameHabitación();
-     
+        habitacion = new InternalFrameHabitación();
+        View.maximize(this);
+
     }
 
     /**
@@ -29,121 +31,157 @@ private InternalFrameHabitación habitacion;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        BtnClientes = new javax.swing.JButton();
-        BtnEmpleados = new javax.swing.JButton();
-        BtnHabitacion = new javax.swing.JButton();
-        BtnReserva = new javax.swing.JButton();
-        BtnServicio = new javax.swing.JButton();
-        BtnAgregarUsuario = new javax.swing.JButton();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jLabelTextoEntrada = new javax.swing.JLabel();
+        jDesktopPaneSistema = new javax.swing.JDesktopPane();
+        jMenuBarSistema = new javax.swing.JMenuBar();
+        jMenuSistema = new javax.swing.JMenu();
+        jMenuItemClientes = new javax.swing.JMenuItem();
+        jMenuItemEmpleados = new javax.swing.JMenuItem();
+        jMenuItemHabitaciones = new javax.swing.JMenuItem();
+        jMenuItemReserva = new javax.swing.JMenuItem();
+        jMenuItemServicios = new javax.swing.JMenuItem();
+        jMenuItemRegistrarUsuarios = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenu2.setText("jMenu2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel1.setText("Azure Horizons Hotel System");
+        jLabelTextoEntrada.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabelTextoEntrada.setText("Azure Horizons Hotel System");
 
-        BtnClientes.setText("Clientes");
-        BtnClientes.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.GroupLayout jDesktopPaneSistemaLayout = new javax.swing.GroupLayout(jDesktopPaneSistema);
+        jDesktopPaneSistema.setLayout(jDesktopPaneSistemaLayout);
+        jDesktopPaneSistemaLayout.setHorizontalGroup(
+            jDesktopPaneSistemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 952, Short.MAX_VALUE)
+        );
+        jDesktopPaneSistemaLayout.setVerticalGroup(
+            jDesktopPaneSistemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 614, Short.MAX_VALUE)
+        );
+
+        jMenuSistema.setText("Administración");
+
+        jMenuItemClientes.setText("Clientes");
+        jMenuItemClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnClientesActionPerformed(evt);
+                jMenuItemClientesActionPerformed(evt);
             }
         });
+        jMenuSistema.add(jMenuItemClientes);
 
-        BtnEmpleados.setText("Empleados");
-
-        BtnHabitacion.setText("Habitación");
-        BtnHabitacion.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemEmpleados.setText("Empleados");
+        jMenuItemEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnHabitacionActionPerformed(evt);
+                jMenuItemEmpleadosActionPerformed(evt);
             }
         });
+        jMenuSistema.add(jMenuItemEmpleados);
 
-        BtnReserva.setText("Reserva");
-        BtnReserva.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemHabitaciones.setText("Habitaciones");
+        jMenuItemHabitaciones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnReservaActionPerformed(evt);
+                jMenuItemHabitacionesActionPerformed(evt);
             }
         });
+        jMenuSistema.add(jMenuItemHabitaciones);
 
-        BtnServicio.setText("Servicios");
-        BtnServicio.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemReserva.setText("Reserva");
+        jMenuItemReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnServicioActionPerformed(evt);
+                jMenuItemReservaActionPerformed(evt);
             }
         });
+        jMenuSistema.add(jMenuItemReserva);
 
-        BtnAgregarUsuario.setText("AgregarUsuario");
+        jMenuItemServicios.setText("Servicios");
+        jMenuItemServicios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemServiciosActionPerformed(evt);
+            }
+        });
+        jMenuSistema.add(jMenuItemServicios);
+
+        jMenuItemRegistrarUsuarios.setText("RegistrarUsuarios");
+        jMenuItemRegistrarUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemRegistrarUsuariosActionPerformed(evt);
+            }
+        });
+        jMenuSistema.add(jMenuItemRegistrarUsuarios);
+
+        jMenuBarSistema.add(jMenuSistema);
+
+        setJMenuBar(jMenuBarSistema);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(BtnEmpleados)
-                .addGap(117, 117, 117)
-                .addComponent(BtnReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
-                .addComponent(BtnAgregarUsuario)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(149, 149, 149))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(BtnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(111, 111, 111)
-                .addComponent(BtnHabitacion)
-                .addGap(96, 96, 96)
-                .addComponent(BtnServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jDesktopPaneSistema)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(313, 313, 313)
+                .addComponent(jLabelTextoEntrada)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnServicio, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(BtnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(BtnHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnEmpleados, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnAgregarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(82, 82, 82))
+                .addComponent(jLabelTextoEntrada)
+                .addGap(28, 28, 28)
+                .addComponent(jDesktopPaneSistema))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BtnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnClientesActionPerformed
+    private void jMenuItemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemClientesActionPerformed
         // TODO add your handling code here:
-       
-           
-       
-       
-        // Código para el botón "Clientes"
-    }//GEN-LAST:event_BtnClientesActionPerformed
+        InternalFrameClientes clientes = new InternalFrameClientes();
+        View.showInternal(jDesktopPaneSistema, clientes);
 
-    private void BtnHabitacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnHabitacionActionPerformed
-        // TODO add your handling code here:
-        if (this.BtnHabitacion.isSelected()){
-            this.habitacion.setVisible(true);
-        }
-    }//GEN-LAST:event_BtnHabitacionActionPerformed
+    }//GEN-LAST:event_jMenuItemClientesActionPerformed
 
-    private void BtnReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReservaActionPerformed
+    private void jMenuItemServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemServiciosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtnReservaActionPerformed
+        InternalFrameServicios servicios = new InternalFrameServicios();
+        View.showInternal(jDesktopPaneSistema, servicios);
+    }//GEN-LAST:event_jMenuItemServiciosActionPerformed
 
-    private void BtnServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnServicioActionPerformed
+    private void jMenuItemEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemEmpleadosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BtnServicioActionPerformed
+        InternalFrameEmpleados empleados = new InternalFrameEmpleados();
+        View.showInternal(jDesktopPaneSistema, empleados);
+
+    }//GEN-LAST:event_jMenuItemEmpleadosActionPerformed
+
+    private void jMenuItemHabitacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemHabitacionesActionPerformed
+        // TODO add your handling code here:
+        InternalFrameHabitación habitaciones = new InternalFrameHabitación();
+        View.showInternal(jDesktopPaneSistema, habitaciones);
+
+    }//GEN-LAST:event_jMenuItemHabitacionesActionPerformed
+
+    private void jMenuItemReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemReservaActionPerformed
+        // TODO add your handling code here:
+        InternalFrameReserva reserva = new InternalFrameReserva();
+        View.showInternal(jDesktopPaneSistema, reserva);
+
+    }//GEN-LAST:event_jMenuItemReservaActionPerformed
+
+    private void jMenuItemRegistrarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemRegistrarUsuariosActionPerformed
+        // TODO add your handling code here:
+        InternalFrameUsuarios usuarios = new InternalFrameUsuarios();
+        View.showInternal(jDesktopPaneSistema, usuarios);
+    }//GEN-LAST:event_jMenuItemRegistrarUsuariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,12 +220,17 @@ private InternalFrameHabitación habitacion;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnAgregarUsuario;
-    private javax.swing.JButton BtnClientes;
-    private javax.swing.JButton BtnEmpleados;
-    private javax.swing.JButton BtnHabitacion;
-    private javax.swing.JButton BtnReserva;
-    private javax.swing.JButton BtnServicio;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JDesktopPane jDesktopPaneSistema;
+    private javax.swing.JLabel jLabelTextoEntrada;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBarSistema;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItemClientes;
+    private javax.swing.JMenuItem jMenuItemEmpleados;
+    private javax.swing.JMenuItem jMenuItemHabitaciones;
+    private javax.swing.JMenuItem jMenuItemRegistrarUsuarios;
+    private javax.swing.JMenuItem jMenuItemReserva;
+    private javax.swing.JMenuItem jMenuItemServicios;
+    private javax.swing.JMenu jMenuSistema;
     // End of variables declaration//GEN-END:variables
 }
