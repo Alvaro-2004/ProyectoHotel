@@ -3,12 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Álvaro%20Álvarez%20R/Desktop/Progra/Java/ProyectoHotel/src/Models/Reserva.java</file>
+            <file>file:/C:/Users/Álvaro%20Álvarez%20R/Desktop/Progra/Java/ProyectoHotel/src/Views/FrmRegistrarUsuarios.java</file>
+            <file>file:/C:/Users/Álvaro%20Álvarez%20R/Desktop/Progra/Java/ProyectoHotel/src/Views/FrmServicios.java</file>
             <file>file:/C:/Users/Álvaro%20Álvarez%20R/Desktop/Progra/Java/ProyectoHotel/src/Models/Habitaciones.java</file>
-            <file>file:/C:/Users/Álvaro%20Álvarez%20R/Desktop/Progra/Java/ProyectoHotel/src/Models/Empleados.java</file>
-            <file>file:/C:/Users/Álvaro%20Álvarez%20R/Desktop/Progra/Java/ProyectoHotel/src/Views/FrmHotel.java</file>
+            <file>file:/C:/Users/Álvaro%20Álvarez%20R/Desktop/Progra/Java/ProyectoHotel/src/Views/FrmHabitaciones.java</file>
+            <file>file:/C:/Users/Álvaro%20Álvarez%20R/Desktop/Progra/Java/ProyectoHotel/src/Controller/Sistema/ControllerHabitaciones.java</file>
+            <file>file:/C:/Users/Álvaro%20Álvarez%20R/Desktop/Progra/Java/ProyectoHotel/src/Views/FrmClientes.java</file>
             <file>file:/C:/Users/Álvaro%20Álvarez%20R/Desktop/Progra/Java/ProyectoHotel/src/Models/Servicios.java</file>
             <file>file:/C:/Users/Álvaro%20Álvarez%20R/Desktop/Progra/Java/ProyectoHotel/src/Models/Clientes.java</file>
+            <file>file:/C:/Users/Álvaro%20Álvarez%20R/Desktop/Progra/Java/ProyectoHotel/src/Views/View.java</file>
+            <file>file:/C:/Users/Álvaro%20Álvarez%20R/Desktop/Progra/Java/ProyectoHotel/src/Views/FrmEmpleados.java</file>
         </group>
     </open-files>
 </project-private>
